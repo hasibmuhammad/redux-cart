@@ -2,11 +2,16 @@ import Header from "./components/Header";
 import CartItem from "./components/CartItem";
 import Footer from "./components/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "./features/cart/cartSlice";
+import { calculateTotal, clearCart } from "./features/cart/cartSlice";
+import { useEffect } from "react";
 
 function App() {
   const dispatch = useDispatch();
   const { cartItems, amount } = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    dispatch(calculateTotal());
+  }, [cartItems]);
 
   return (
     <>

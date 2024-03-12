@@ -6,7 +6,7 @@ const CartItem = ({ id, title, price, img, amount }) => {
   return (
     <div className="flex items-center justify-between">
       <div className="flex items-center">
-        <img className="w-[100px]" src={img} alt="" />
+        <img className="select-none w-[100px]" src={img} alt="" />
         <div className="space-y-1">
           <h1 className="tracking-wider font-bold text-2xl">{title}</h1>
           <p className="text-slate-400 font-semibold tracking-wider">
@@ -36,7 +36,7 @@ const CartItem = ({ id, title, price, img, amount }) => {
             d="m4.5 15.75 7.5-7.5 7.5 7.5"
           />
         </svg>
-        <h2 className="text-xl font-semibold">{amount}</h2>
+        <h2 className="select-none text-xl font-semibold">{amount}</h2>
         <svg
           onClick={() => {
             if (amount === 1) {
