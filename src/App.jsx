@@ -5,6 +5,7 @@ import "./App.css";
 import Header from "./components/Header";
 import CartItem from "./components/CartItem";
 import cartItems from "./api/cartItems";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,10 +16,7 @@ function App() {
           <CartItem key={item.id} {...item} />
         ))}
         <hr />
-        <div className="flex justify-between">
-          <h1 className="font-bold tracking-widest text-md">Total</h1>
-          <p className="font-bold tracking-widest text-md">$1000</p>
-        </div>
+        <Footer />
       </div>
     </>
   );
